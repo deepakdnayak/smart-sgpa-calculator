@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📊 SGPA Calculator
 
-## Getting Started
+An interactive and AI-powered **SGPA Calculator** that extracts subject scores from report card images and computes your Semester Grade Point Average (SGPA) dynamically.
 
-First, run the development server:
+## 🚀 Features
+- 📷 **Image Upload**: Drag & drop, click to upload, or paste an image of your report card.
+- 🎯 **AI-Powered OCR**: Uses Google's Gemini API to extract subject names, codes, and total marks from the image.
+- 🔢 **Automatic Credit Assignment**: Dynamically fetches course credits from an online dataset.
+- 📉 **SGPA Calculation**: Computes SGPA using the extracted marks and corresponding credits.
+- 🎨 **Interactive UI**: Built using **React** and **Tailwind CSS** for a seamless experience.
+- 🔔 **Toasts & Notifications**: User-friendly feedback using `sonner`.
 
+## 🏗️ Installation & Setup
+
+### 1️⃣ Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/sgpa-calculator.git
+cd sgpa-calculator
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3️⃣ Set Up Environment Variables
+Create a `.env.local` file and add your Google Gemini API key:
+```env
+NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4️⃣ Run the Application
+```bash
+npm run dev
+```
+The app will be available at **http://localhost:3000**.
 
-## Learn More
+## 📝 Usage Guide
+1. **Upload Image**: Drag & drop or select an image containing your subject marks.
+2. **Processing**: The app extracts text using AI and matches subjects with credits.
+3. **SGPA Calculation**: The system computes SGPA based on marks and corresponding credits.
+4. **Results**: The final SGPA and extracted subject details are displayed interactively.
 
-To learn more about Next.js, take a look at the following resources:
+## 📚 How SGPA is Calculated
+SGPA is calculated using:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+SGPA = ( Σ (Grade Point × Credits) ) / ( Σ Credits )
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Grade Point Mapping:
+| Marks Range | Grade Point |
+|------------|------------|
+| 90-100     | 10         |
+| 80-89      | 9          |
+| 70-79      | 8          |
+| 60-69      | 7          |
+| 50-59      | 6          |
+| 45-49      | 5          |
+| 40-44      | 4          |
+| <40        | 0          |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Technologies Used
+- **Frontend**: React, Tailwind CSS
+- **AI Model**: Google Gemini API
+- **State Management**: useState, useEffect
+- **Notifications**: `sonner`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 💡 Contributing
+Contributions are welcome! Follow these steps:
+1. **Fork** the repository.
+2. Create a **new branch**: `git checkout -b feature-branch`
+3. Make your changes and **commit**: `git commit -m "Added new feature"`
+4. **Push** to your fork: `git push origin feature-branch`
+5. Open a **Pull Request** 🎉
+
+## 🔗 Useful Links
+- **Live Demo**: [Smart SGPA Calculator](https://smart-sgpa-calculator.vercel.app/)
+- **Report Issues**: [GitHub Issues](https://github.com/yourusername/sgpa-calculator/issues)
+- **Course Credits Dataset**: [GitHub Raw Data](https://raw.githubusercontent.com/deepakdnayak/datasets/refs/heads/main/courseCredits)
+
+<!-- ## 📜 License
+This project is licensed under the [MIT License](LICENSE). -->
+
+---
+🚀 **Happy Calculating!**
+
