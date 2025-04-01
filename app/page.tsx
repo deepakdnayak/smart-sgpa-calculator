@@ -176,7 +176,7 @@ function App() {
     <Toaster position="bottom-right" richColors />
     <div className="p-6 max-w-3xl mx-auto space-y-4">
       <h1 className="text-4xl font-bold text-center mb-7">
-        Advanced SGPA Calcultor
+        Advanced SGPA Calculator
       </h1>
 
       {!subjectScores && (
